@@ -24,8 +24,10 @@ function main() {
           label: `BTC Price Index`,
           title: `Current $${price}`
         });
-      });
-    });
+      })
+      .catch(error => {});
+    })
+    .catch(error => {});
 
     Api.getETHPrices({
       start,
@@ -39,7 +41,8 @@ function main() {
         label: `ETH Price Index`,
         title: `Current $${price}`
       });
-    });
+    })
+    .catch(error => {});
   };
 
   renderFetch();
@@ -50,7 +53,7 @@ function main() {
   });
 
   Api.onBTCTransaction(x => {
-    btcLogger.log(`${x.hash.substr(0, 16)}... ${x.totalInputs - x.totalOutputs}`);
+    btcLogger.log(`${x.hash} ${x.totalInputs - x.totalOutputs}`);
   });
 
   const interval = setInterval(() => {
