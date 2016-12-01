@@ -25,13 +25,13 @@ function init() {
       });
     });
 
-    Api.getETCPrices({
+    Api.getETHPrices({
       start,
       end
     })
     .then(({x, y}) => {
       const price = _.last(y);
-      gui.renderChart({data: {x, y}, position: [5, 0, 5, 10], label: `ETC`, title: `Current ${price}`});
+      gui.renderChart({data: {x, y}, position: [5, 0, 5, 10], label: `ETH`, title: `Current ${price}`});
     });
   };
 
