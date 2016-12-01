@@ -4,10 +4,16 @@
 
 <img src="./screenshot.png" width="800">
 
+# Install
+
+```bash
+$ npm install -g git@github.com:miguelmota/btc-eth-dash.git
+```
+
 # Run
 
 ```bash
-npm start
+$ btc-eth-dash
 ```
 
 # License
