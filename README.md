@@ -19,5 +19,3 @@ $ btc-eth-dash
 # License
 
 MIT
-
-

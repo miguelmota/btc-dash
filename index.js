@@ -20,9 +20,9 @@ function main() {
       .then(price => {
         gui.renderChart({
           data: {x, y},
-          position: [0, 0, 5, 10],
-          label: `BTC`,
-          title: `Current ${price}`
+          position: [0, 0, 5, 7],
+          label: `BTC Price Index`,
+          title: `Current $${price}`
         });
       });
     });
@@ -36,13 +36,22 @@ function main() {
       gui.renderChart({
         data: {x, y},
         position: [5, 0, 5, 10],
-        label: `ETH`,
-        title: `Current ${price}`
+        label: `ETH Price Index`,
+        title: `Current $${price}`
       });
     });
   };
 
   renderFetch();
+
+  const btcLogger = gui.renderLog({
+    position: [0, 7, 5, 3],
+    label: `BTC Transactions`
+  });
+
+  Api.onBTCTransaction(x => {
+    btcLogger.log(`${x.hash.substr(0, 16)}... ${x.totalInputs - x.totalOutputs}`);
+  });
 
   const interval = setInterval(() => {
     renderFetch();
