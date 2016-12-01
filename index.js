@@ -1,4 +1,3 @@
-const request = require('request');
 const moment = require(`moment`);
 const _ = require(`lodash`);
 
@@ -21,7 +20,12 @@ function init() {
     .then(({x, y}) => {
       return Api.getBTCCurrentPrice()
       .then(price => {
-        gui.renderChart({data: {x, y}, position: [0, 0, 5, 10], label: `BTC`, title: `Current ${price}`});
+        gui.renderChart({
+          data: {x, y},
+          position: [0, 0, 5, 10],
+          label: `BTC`,
+          title: `Current ${price}`
+        });
       });
     });
 
@@ -31,13 +35,18 @@ function init() {
     })
     .then(({x, y}) => {
       const price = _.last(y);
-      gui.renderChart({data: {x, y}, position: [5, 0, 5, 10], label: `ETH`, title: `Current ${price}`});
+      gui.renderChart({
+        data: {x, y},
+        position: [5, 0, 5, 10],
+        label: `ETH`,
+        title: `Current ${price}`
+      });
     });
   };
 
   renderFetch();
 
-  setInterval(() => {
+  const interval = setInterval(() => {
     renderFetch();
   }, 1e4);
 }
