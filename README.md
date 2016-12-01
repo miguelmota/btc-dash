@@ -2,7 +2,7 @@
 
 > A dashboard for terminal that displays historical price indexes for bitcoin and ether.
 
-<img src="./screenshot.png" width="600">
+<img src="./screenshot.png" width="800">
 
 # Run
 
