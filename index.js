@@ -39,7 +39,7 @@ function init() {
 
   setInterval(() => {
     renderFetch();
-  }, 10);
+  }, 1e4);
 }
 
 init();
