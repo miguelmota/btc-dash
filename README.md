@@ -7,7 +7,7 @@
 # Install
 
 ```bash
-$ npm install -g git@github.com:miguelmota/btc-eth-dash.git
+$ npm install -g https://github.com/miguelmota/btc-eth-dash.git
 ```
 
 # Run
