@@ -1,5 +1,5 @@
 {
-  "name": "btc-etc-dash",
+  "name": "btc-dash",
   "version": "0.0.1",
   "description": "A dashboard for terminal that displays historical price indexes for bitcoin and ether.",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "btc-eth-dash": "bin/index.js"
+    "btc-dash": "bin/index.js"
   },
   "author": "",
   "license": "MIT",

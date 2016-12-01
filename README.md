@@ -7,13 +7,13 @@
 # Install
 
 ```bash
-$ npm install -g https://github.com/miguelmota/btc-eth-dash.git
+$ npm install -g btc-dash
 ```
 
 # Run
 
 ```bash
-$ btc-eth-dash
+$ btc-dash
 ```
 
 # License
