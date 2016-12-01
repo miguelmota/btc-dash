@@ -4,12 +4,10 @@ const _ = require(`lodash`);
 const Api = require(`./lib/Api`);
 const Gui = require(`./lib/Gui`);
 
-function init() {
+function main() {
   const gui = new Gui();
-  const timeOptions = [1, 7, 30, 90, 365];
-  const timeOption = 4;
 
-  const start =  moment().subtract(timeOptions[timeOption], `day`).unix();
+  const start =  moment().subtract(360, `day`).unix();
   const end = moment().unix();
 
   const renderFetch = () => {
@@ -51,4 +49,4 @@ function init() {
   }, 1e4);
 }
 
-init();
+main();
