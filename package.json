@@ -16,6 +16,7 @@
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.6.5",
     "moment": "^2.17.0",
+    "nodejs-websocket": "^1.7.1",
     "request": "^2.79.0"
   }
 }
