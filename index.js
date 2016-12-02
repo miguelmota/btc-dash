@@ -58,7 +58,7 @@ function main() {
 
   const interval = setInterval(() => {
     renderFetch();
-  }, 1e4);
+  }, 30e4);
 }
 
 main();
