@@ -1,6 +1,6 @@
 {
   "name": "btc-dash",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A dashboard for terminal that displays historical price indexes for bitcoin and ether.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,26 @@
   "bin": {
     "btc-dash": "bin/index.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelmota/btc-dash"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelmota/btc-dash/issues"
+  },
+  "homepage": "https://github.com/miguelmota/btc-dash",
+  "keywords": [
+    "btc",
+    "bitcoin",
+    "eth",
+    "ether",
+    "ethereum",
+    "blockchain",
+    "dashboard",
+    "terminal",
+    "cli"
+  ],
+  "author": "Miguel Mota <hello@miguelmota.com> (http://www.miguelmota.com/)",
   "license": "MIT",
   "dependencies": {
     "blessed": "^0.1.81",
