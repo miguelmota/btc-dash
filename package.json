@@ -1,6 +1,6 @@
 {
   "name": "btc-dash",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A dashboard for terminal that displays historical price indexes for bitcoin and ether.",
   "main": "index.js",
   "scripts": {

@@ -10,19 +10,25 @@ function main() {
   const start =  moment().subtract(360, `day`).unix();
   const end = moment().unix();
 
+  const formatStats = (x) => {
+      const stats = `Price $${x.priceUsd} | 24H Volume $${x[`24HVolumeUsd`]} | Market Cap $${x.marketCapUsd} | Available Supply ${x.availableSupply} | 1HΔ %${x.percentChange1H} | 24HΔ %${x.percentChange24H} | 7DΔ %${x.percentChange7D}`;
+
+    return stats;
+  };
+
   const renderFetch = () => {
     Api.getBTCPrices({
       start,
       end
     })
     .then(({x, y}) => {
-      return Api.getBTCCurrentPrice()
-      .then(price => {
+      return Api.getBTCTicker()
+      .then(data => {
         gui.renderChart({
           data: {x, y},
           position: [0, 0, 5, 7],
           label: `BTC Price Index`,
-          title: `Current $${price}`
+          title: formatStats(data)
         });
       })
       .catch(error => {});
@@ -34,13 +40,16 @@ function main() {
       end
     })
     .then(({x, y}) => {
-      const price = _.last(y);
-      gui.renderChart({
-        data: {x, y},
-        position: [5, 0, 5, 10],
-        label: `ETH Price Index`,
-        title: `Current $${price}`
-      });
+      return Api.getETHTicker()
+      .then(data => {
+        gui.renderChart({
+          data: {x, y},
+          position: [5, 0, 5, 7],
+          label: `ETH Price Index`,
+          title: formatStats(data)
+        });
+      })
+      .catch(error => {});
     })
     .catch(error => {});
   };
@@ -48,7 +57,7 @@ function main() {
   renderFetch();
 
   const btcLogger = gui.renderLog({
-    position: [0, 7, 5, 3],
+    position: [0, 7, 10, 3],
     label: `BTC Transactions`
   });
 
@@ -58,7 +67,7 @@ function main() {
 
   const interval = setInterval(() => {
     renderFetch();
-  }, 30e4);
+  }, 15e4);
 }
 
 main();
