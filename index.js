@@ -62,7 +62,8 @@ function main() {
   });
 
   Api.onBTCTransaction(x => {
-    btcLogger.log(`${x.hash} ${x.totalInputs - x.totalOutputs}`);
+    const btcTransactedGuess = _.get(x, [`outputs`, 1], _.get(x, [`outputs`, 0], ``)).value;
+    btcLogger.log(`${x.hash} ${btcTransactedGuess}`);
   });
 
   const interval = setInterval(() => {
