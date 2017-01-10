@@ -1,5 +1,6 @@
 const moment = require(`moment`);
 const _ = require(`lodash`);
+const commafy = require(`commafy`);
 
 const Api = require(`./lib/Api`);
 const Gui = require(`./lib/Gui`);
@@ -11,7 +12,7 @@ function main() {
   const end = moment().unix();
 
   const formatStats = (x) => {
-      const stats = `Price $${x.priceUsd} | 24H Volume $${x[`24HVolumeUsd`]} | Market Cap $${x.marketCapUsd} | Available Supply ${x.availableSupply} | 1HΔ ${x.percentChange1H}% | 24HΔ ${x.percentChange24H}% | 7DΔ ${x.percentChange7D}%`;
+      const stats = `Price $${commafy(x.priceUsd)} | 24H Volume $${commafy(x[`24HVolumeUsd`])} | Market Cap $${commafy(x.marketCapUsd)} | Available Supply ${commafy(x.availableSupply)} | 1HΔ ${x.percentChange1H}% | 24HΔ ${x.percentChange24H}% | 7DΔ ${x.percentChange7D}%`;
 
     return stats;
   };
